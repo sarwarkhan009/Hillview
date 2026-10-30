@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { listItems, createItem, updateItem, deleteItem, uploadGalleryImage } from "../../lib/firestore";
 
+
 const FIELDS = {
   notices: [
     { name: "title", label: "Notice title", required: true },
@@ -25,6 +26,7 @@ const FIELDS = {
   ],
 };
 
+
 export default function CollectionManager({ kind }) {
   const [items, setItems] = useState([]);
   const [form, setForm] = useState({});
@@ -34,7 +36,9 @@ export default function CollectionManager({ kind }) {
   const [err, setErr] = useState("");
   const [busy, setBusy] = useState(false);
 
+
   const fields = FIELDS[kind];
+
 
   async function refresh() {
     try {
@@ -44,7 +48,9 @@ export default function CollectionManager({ kind }) {
     }
   }
 
+
   useEffect(() => { refresh(); }, [kind]);
+
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -77,6 +83,7 @@ export default function CollectionManager({ kind }) {
     }
   }
 
+
   return (
     <div>
       <h2 style={{ color: "var(--navy)", fontSize: "1.1rem", marginBottom: 14 }}>
@@ -85,7 +92,7 @@ export default function CollectionManager({ kind }) {
       <form onSubmit={onSubmit}>
         {kind === "gallery" && !editing && (
           <div className="field">
-            <label htmlFor="g-file">Image file (JPG/PNG, up to ~2 MB recommended)</label>
+            <label htmlFor="g-file">Image file (JPG, PNG or WebP, max 5 MB)</label>
             <input id="g-file" type="file" accept="image/*"
               onChange={(e) => setFile(e.target.files[0] || null)} />
           </div>
@@ -116,6 +123,7 @@ export default function CollectionManager({ kind }) {
           </button>
         )}
       </form>
+
 
       <h2 style={{ color: "var(--navy)", fontSize: "1.1rem", margin: "26px 0 14px" }}>
         Published items
