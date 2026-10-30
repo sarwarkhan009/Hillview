@@ -1,4 +1,6 @@
+export const dynamic = "force-static";
 import { NAV } from "../lib/nav";
+
 
 export default function sitemap() {
   const base = "https://hillviewsimdega.com";
