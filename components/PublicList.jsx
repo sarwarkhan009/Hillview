@@ -3,14 +3,17 @@ import { useEffect, useState } from "react";
 import { isFirebaseConfigured } from "../lib/firebase";
 import { listItems } from "../lib/firestore";
 
+
 const EMPTY_TEXT = {
   news: "School news will be published here soon.",
   events: "Upcoming events will be published here soon.",
   notices: "Notices and circulars will be published here soon.",
 };
 
+
 export default function PublicList({ kind }) {
   const [items, setItems] = useState(null);
+
 
   useEffect(() => {
     if (!isFirebaseConfigured) {
@@ -19,6 +22,7 @@ export default function PublicList({ kind }) {
     }
     listItems(kind).then(setItems).catch(() => setItems([]));
   }, [kind]);
+
 
   if (items === null) return <p>Loading...</p>;
   if (items.length === 0) {
@@ -31,6 +35,7 @@ export default function PublicList({ kind }) {
     );
   }
 
+
   return (
     <div>
       {items.map((it) => (
@@ -40,7 +45,7 @@ export default function PublicList({ kind }) {
           {it.time && <p><strong>{it.time}</strong></p>}
           {it.body && <p>{it.body}</p>}
           {it.description && <p>{it.description}</p>}
-          {it.link && (
+          {it.link && /^https:\/\//i.test(it.link) && (
             <p><a href={it.link} target="_blank" rel="noopener noreferrer">View attachment &raquo;</a></p>
           )}
         </article>
