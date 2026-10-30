@@ -4,12 +4,31 @@ import { onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebas
 import { getFirebaseAuth, isFirebaseConfigured } from "../../lib/firebase";
 import CollectionManager from "./CollectionManager";
 
+
 const TABS = [
   { key: "notices", label: "Notices" },
   { key: "news", label: "News" },
   { key: "events", label: "Events" },
   { key: "gallery", label: "Gallery" },
 ];
+
+
+const MAX_ATTEMPTS = 3;
+const LOCK_MINUTES = 15;
+const LOCK_KEY = "hv_admin_login_lock";
+
+
+// Client-side lockout: after MAX_ATTEMPTS failed logins, block further
+// attempts from this browser for LOCK_MINUTES. This is a UX layer only -
+// the real enforcement is Firebase Auth's own throttling (see README).
+function readLock() {
+  try {
+    const v = JSON.parse(localStorage.getItem(LOCK_KEY));
+    if (v && typeof v.fails === "number" && typeof v.until === "number") return v;
+  } catch {}
+  return { fails: 0, until: 0 };
+}
+
 
 export default function AdminApp() {
   const [user, setUser] = useState(undefined);
@@ -18,8 +37,22 @@ export default function AdminApp() {
   const [password, setPassword] = useState("");
   const [err, setErr] = useState("");
   const [busy, setBusy] = useState(false);
+  const [lockedUntil, setLockedUntil] = useState(() => readLock().until);
+  const [now, setNow] = useState(() => Date.now());
+
 
   const auth = getFirebaseAuth();
+
+
+  useEffect(() => {
+    const t = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(t);
+  }, []);
+
+
+  const locked = lockedUntil > now;
+  const lockMinutesLeft = Math.max(1, Math.ceil((lockedUntil - now) / 60000));
+
 
   useEffect(() => {
     if (!auth) {
@@ -28,6 +61,7 @@ export default function AdminApp() {
     }
     return onAuthStateChanged(auth, (u) => setUser(u));
   }, [auth]);
+
 
   if (!isFirebaseConfigured) {
     return (
@@ -45,9 +79,11 @@ export default function AdminApp() {
     );
   }
 
+
   if (user === undefined) {
     return <div className="admin-wrap"><div className="admin-card"><p>Loading...</p></div></div>;
   }
+
 
   if (!user) {
     return (
@@ -57,12 +93,28 @@ export default function AdminApp() {
           <form
             onSubmit={async (e) => {
               e.preventDefault();
+              const lock = readLock();
+              if (lock.until > Date.now()) {
+                setLockedUntil(lock.until);
+                return;
+              }
               setErr("");
               setBusy(true);
               try {
                 await signInWithEmailAndPassword(auth, email, password);
+                localStorage.removeItem(LOCK_KEY);
+                setLockedUntil(0);
               } catch (ex) {
-                setErr("Login failed. Please check the email and password.");
+                lock.fails += 1;
+                if (lock.fails >= MAX_ATTEMPTS) {
+                  lock.fails = 0;
+                  lock.until = Date.now() + LOCK_MINUTES * 60000;
+                  setLockedUntil(lock.until);
+                  setErr(`Too many failed attempts. Login is locked for ${LOCK_MINUTES} minutes.`);
+                } else {
+                  setErr(`Login failed. Please check the email and password. (Attempt ${lock.fails} of ${MAX_ATTEMPTS})`);
+                }
+                localStorage.setItem(LOCK_KEY, JSON.stringify(lock));
               } finally {
                 setBusy(false);
               }
@@ -78,8 +130,13 @@ export default function AdminApp() {
               <input id="admin-pass" type="password" required value={password}
                 onChange={(e) => setPassword(e.target.value)} autoComplete="current-password" />
             </div>
+            {locked && (
+              <p className="admin-msg error">
+                Login is locked after 3 wrong attempts. Please try again in {lockMinutesLeft} minute{lockMinutesLeft === 1 ? "" : "s"}.
+              </p>
+            )}
             {err && <p className="admin-msg error">{err}</p>}
-            <button className="btn btn-gold" type="submit" disabled={busy}>
+            <button className="btn btn-gold" type="submit" disabled={busy || locked}>
               {busy ? "Signing in..." : "Sign In"}
             </button>
           </form>
@@ -87,6 +144,7 @@ export default function AdminApp() {
       </div>
     );
   }
+
 
   return (
     <div className="admin-wrap">
