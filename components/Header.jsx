@@ -24,7 +24,7 @@ export default function Header() {
       <div className="brandrow">
         <div className="container">
           <a href="/" aria-label="HillView Public School home">
-            <img src="/images/logo.svg" alt="HillView Public School logo" className="brand-logo" width="64" height="64" />
+            <img src="/images/logo.png" alt="HillView Public School logo" className="brand-logo" width="64" height="64" />
           </a>
           <div className="brand-text">
             <h1>{SCHOOL.fullName}</h1>
