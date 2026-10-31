@@ -21,11 +21,13 @@ const securityHeaders = [
 ];
 
 const nextConfig = {
+  output: "export",
+  basePath: "/Hillview",
+  assetPrefix: "/Hillview/",
   reactStrictMode: true,
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
 };
-
 
 export default nextConfig;
