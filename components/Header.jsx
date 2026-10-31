@@ -23,8 +23,8 @@ export default function Header() {
 
       <div className="brandrow">
         <div className="container">
-          <a href="/" aria-label="HillView Public School home">
-            <img src="/Hillview/images/logo.png" alt="HillView Public School logo" className="brand-logo" width="64" height="64" />
+          <a href="/" aria-label="HillView Public School Simdega home">
+            <img src="/Hillview/images/logo.png" alt="HillView Public School Simdega logo" className="brand-logo" width="64" height="64" />
           </a>
           <div className="brand-text">
             <h1>{SCHOOL.fullName}</h1>
@@ -34,7 +34,7 @@ export default function Header() {
             <a className="btn btn-outline" href={SCHOOL.feePayUrl} target="_blank" rel="noopener noreferrer">
               Pay Fee Online
             </a>
-            <a className="btn btn-gold" href="/admissions/apply">Apply for Admission</a>
+            <a className="btn btn-gold" href={SCHOOL.applyUrl} target="_blank" rel="noopener noreferrer">Apply for Admission</a>
           </div>
         </div>
       </div>
@@ -70,7 +70,7 @@ export default function Header() {
                   <ul className="dropdown">
                     {item.children.map((c) => (
                       <li key={c.href}>
-                        <a href={c.href} onClick={() => setOpen(false)}>{c.label}</a>
+                        <a href={c.href} {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})} onClick={() => setOpen(false)}>{c.label}</a>
                       </li>
                     ))}
                   </ul>
