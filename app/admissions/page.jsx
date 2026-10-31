@@ -15,7 +15,7 @@ export default function AdmissionsPage() {
         {ADMISSIONS.procedure.map((s) => <li key={s.slice(0, 24)}>{s}</li>)}
       </ol>
       <p style={{ marginTop: 18 }}>
-        <a className="btn btn-gold" href="/admissions/apply">Apply Online</a>{" "}
+        <a className="btn btn-gold" href={SCHOOL.applyUrl} target="_blank" rel="noopener noreferrer">Apply Online</a>{" "}
         <a className="btn btn-outline" href="/admissions/guidelines">Read Guidelines</a>
       </p>
     </SimplePage>
