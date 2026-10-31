@@ -2,7 +2,7 @@ import SimplePage from "../../../components/SimplePage";
 
 export const metadata = {
   title: "Medical",
-  description: "Medical care at HillView Public School, Simdega.",
+  description: "Medical care at HillView Public School Simdega.",
 };
 
 export default function MedicalPage() {

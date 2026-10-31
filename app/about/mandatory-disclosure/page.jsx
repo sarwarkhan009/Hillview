@@ -3,7 +3,7 @@ import { SCHOOL } from "../../../lib/content";
 
 export const metadata = {
   title: "Mandatory Disclosure",
-  description: "CBSE mandatory disclosure of HillView Public School, Simdega.",
+  description: "CBSE mandatory disclosure of HillView Public School Simdega.",
 };
 
 export default function MandatoryDisclosurePage() {

@@ -3,7 +3,7 @@ import { LEADERS } from "../../../lib/content";
 
 export const metadata = {
   title: "Chairman",
-  description: "Message from the Chairman of HillView Public School, Simdega.",
+  description: "Message from the Chairman of HillView Public School Simdega.",
 };
 
 export default function LeaderPage() {

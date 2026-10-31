@@ -3,7 +3,7 @@ import { RESULTS_NOTE, SCHOOL } from "../../../lib/content";
 
 export const metadata = {
   title: "Results",
-  description: "School results of HillView Public School, Simdega.",
+  description: "School results of HillView Public School Simdega.",
 };
 
 export default function ResultsPage() {

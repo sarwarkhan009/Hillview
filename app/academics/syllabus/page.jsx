@@ -2,7 +2,7 @@ import SimplePage from "../../../components/SimplePage";
 
 export const metadata = {
   title: "Syllabus",
-  description: "Class-wise syllabus of HillView Public School, Simdega.",
+  description: "Class-wise syllabus of HillView Public School Simdega.",
 };
 
 export default function SyllabusPage() {

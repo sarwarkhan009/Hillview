@@ -3,7 +3,7 @@ import { SCHOOL } from "../../../lib/content";
 
 export const metadata = {
   title: "Affiliation",
-  description: "CBSE affiliation details of HillView Public School, Simdega.",
+  description: "CBSE affiliation details of HillView Public School Simdega.",
 };
 
 export default function AffiliationPage() {

@@ -2,7 +2,7 @@ import SimplePage from "../../../components/SimplePage";
 
 export const metadata = {
   title: "Booklist",
-  description: "Class-wise booklist of HillView Public School, Simdega.",
+  description: "Class-wise booklist of HillView Public School Simdega.",
 };
 
 export default function BooklistPage() {

@@ -3,7 +3,7 @@ import { SCHOOL } from "../../../lib/content";
 
 export const metadata = {
   title: "Fee Structure",
-  description: "Fee structure of HillView Public School, Simdega.",
+  description: "Fee structure of HillView Public School Simdega.",
 };
 
 export default function FeesPage() {

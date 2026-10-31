@@ -3,7 +3,7 @@ import { LEADERS } from "../../../lib/content";
 
 export const metadata = {
   title: "Principal's Desk",
-  description: "Message from the Principal of HillView Public School, Simdega.",
+  description: "Message from the Principal of HillView Public School Simdega.",
 };
 
 export default function PrincipalPage() {

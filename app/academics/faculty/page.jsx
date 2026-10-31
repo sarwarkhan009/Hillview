@@ -2,7 +2,7 @@ import SimplePage from "../../../components/SimplePage";
 
 export const metadata = {
   title: "Faculty",
-  description: "Faculty of HillView Public School, Simdega.",
+  description: "Faculty of HillView Public School Simdega.",
 };
 
 export default function FacultyPage() {

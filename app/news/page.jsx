@@ -3,7 +3,7 @@ import PublicList from "../../components/PublicList";
 
 export const metadata = {
   title: "School News",
-  description: "News from HillView Public School, Simdega.",
+  description: "News from HillView Public School Simdega.",
 };
 
 export default function Page() {

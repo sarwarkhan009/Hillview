@@ -6,8 +6,8 @@ const SLIDES = [
   {
     img: "/images/hero-campus.svg",
     alt: "HillView Public School campus",
-    title: "Welcome to HillView Public School, Simdega",
-    text: "An English medium, co-educational CBSE affiliated school managed by Ramawtar Ji Memorial Trust.",
+    title: "Welcome to HillView Public School Simdega",
+    text: "An English medium, co-educational CBSE affiliated school. Managed by Ramawtar Ji Memorial Trust.",
     cta: { label: "Explore the School", href: "/about" },
   },
   {

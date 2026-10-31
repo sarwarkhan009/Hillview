@@ -3,7 +3,7 @@ import { SCHOOL } from "../../../lib/content";
 
 export const metadata = {
   title: "Curriculum",
-  description: "Curriculum at HillView Public School, Simdega - CBSE affiliated, English medium.",
+  description: "Curriculum at HillView Public School Simdega - CBSE affiliated, English medium.",
 };
 
 export default function CurriculumPage() {

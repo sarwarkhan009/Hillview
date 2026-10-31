@@ -3,7 +3,7 @@ import { MISSION } from "../../../lib/content";
 
 export const metadata = {
   title: "Mission & Vision",
-  description: "The mission and vision of HillView Public School, Simdega.",
+  description: "The mission and vision of HillView Public School Simdega.",
 };
 
 export default function MissionVisionPage() {

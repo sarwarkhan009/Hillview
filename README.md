@@ -1,7 +1,7 @@
-# HillView Public School, Simdega - Website
+# HillView Public School Simdega - Website
 
 
-Official website of **HillView Public School, Simdega** (CBSE Affiliation No. 3430725),
+Official website of **HillView Public School Simdega** (CBSE Affiliation No. 3430725),
 managed by Ramawtar Ji Memorial Trust.
 
 

@@ -3,7 +3,7 @@ import { ADMISSIONS } from "../../../lib/content";
 
 export const metadata = {
   title: "Admission Guidelines",
-  description: "Admission guidelines of HillView Public School, Simdega.",
+  description: "Admission guidelines of HillView Public School Simdega.",
 };
 
 export default function GuidelinesPage() {

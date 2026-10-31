@@ -2,7 +2,7 @@ import SimplePage from "../../../components/SimplePage";
 
 export const metadata = {
   title: "Academic Calendar",
-  description: "Academic calendar of HillView Public School, Simdega.",
+  description: "Academic calendar of HillView Public School Simdega.",
 };
 
 export default function CalendarPage() {

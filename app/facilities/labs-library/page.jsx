@@ -2,7 +2,7 @@ import SimplePage from "../../../components/SimplePage";
 
 export const metadata = {
   title: "Labs & Library",
-  description: "Laboratories and library of HillView Public School, Simdega.",
+  description: "Laboratories and library of HillView Public School Simdega.",
 };
 
 export default function LabsPage() {

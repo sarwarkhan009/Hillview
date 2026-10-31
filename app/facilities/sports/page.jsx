@@ -2,7 +2,7 @@ import SimplePage from "../../../components/SimplePage";
 
 export const metadata = {
   title: "Sports & Playground",
-  description: "Sports and playground at HillView Public School, Simdega.",
+  description: "Sports and playground at HillView Public School Simdega.",
 };
 
 export default function SportsPage() {

@@ -3,7 +3,7 @@ import GalleryGrid from "../../components/GalleryGrid";
 
 export const metadata = {
   title: "Photo Gallery",
-  description: "Photo gallery of HillView Public School, Simdega.",
+  description: "Photo gallery of HillView Public School Simdega.",
 };
 
 export default function Page() {

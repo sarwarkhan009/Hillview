@@ -2,7 +2,7 @@ import SimplePage from "../../../components/SimplePage";
 
 export const metadata = {
   title: "List of Holidays",
-  description: "School holidays list of HillView Public School, Simdega.",
+  description: "School holidays list of HillView Public School Simdega.",
 };
 
 export default function HolidaysPage() {

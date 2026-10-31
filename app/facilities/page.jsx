@@ -4,7 +4,7 @@ import { Icon } from "../../components/Icons";
 
 export const metadata = {
   title: "Infrastructure & Facilities",
-  description: "Campus and facilities of HillView Public School, Simdega.",
+  description: "Campus and facilities of HillView Public School Simdega.",
 };
 
 const ICONS = ["monitor", "flask", "book", "book", "trophy", "leaf"];

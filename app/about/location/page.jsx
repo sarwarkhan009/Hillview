@@ -3,7 +3,7 @@ import { SCHOOL } from "../../../lib/content";
 
 export const metadata = {
   title: "Location",
-  description: "How to reach HillView Public School, Simdega.",
+  description: "How to reach HillView Public School Simdega.",
 };
 
 export default function LocationPage() {

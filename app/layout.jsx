@@ -6,11 +6,11 @@ import { SCHOOL } from "../lib/content";
 export const metadata = {
   metadataBase: new URL("https://hillviewsimdega.com"),
   title: {
-    default: "HillView Public School, Simdega | CBSE Affiliated School",
-    template: "%s | HillView Public School, Simdega",
+    default: "HillView Public School Simdega | CBSE Affiliated School",
+    template: "%s | HillView Public School Simdega",
   },
   description:
-    "HillView Public School, Simdega - an English medium, co-educational CBSE affiliated school (Affiliation No. 3430725) managed by Ramawtar Ji Memorial Trust. Admissions open.",
+    "HillView Public School Simdega - an English medium, co-educational CBSE affiliated school (Affiliation No. 3430725). Managed by Ramawtar Ji Memorial Trust. Admissions open.",
   keywords: [
     "HillView Public School",
     "Simdega school",
@@ -18,11 +18,11 @@ export const metadata = {
     "school in Simdega Jharkhand",
   ],
   openGraph: {
-    title: "HillView Public School, Simdega",
+    title: "HillView Public School Simdega",
     description:
       "English medium, co-educational CBSE affiliated school in Simdega, Jharkhand. Managed by Ramawtar Ji Memorial Trust.",
     url: "https://hillviewsimdega.com",
-    siteName: "HillView Public School, Simdega",
+    siteName: "HillView Public School Simdega",
     locale: "en_IN",
     type: "website",
   },

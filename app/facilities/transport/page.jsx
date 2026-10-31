@@ -3,7 +3,7 @@ import { SCHOOL } from "../../../lib/content";
 
 export const metadata = {
   title: "Transport",
-  description: "Transport information of HillView Public School, Simdega.",
+  description: "Transport information of HillView Public School Simdega.",
 };
 
 export default function TransportPage() {
