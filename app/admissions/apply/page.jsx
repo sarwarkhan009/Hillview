@@ -20,8 +20,12 @@ export default function ApplyPage() {
           <tr><th>Address</th><td>{SCHOOL.address}</td></tr>
         </tbody>
       </table>
+      <p style={{ marginTop: 18 }}>
+        <a className="btn btn-gold" href={SCHOOL.applyUrl} target="_blank" rel="noopener noreferrer">Apply Online</a>
+      </p>
       <div className="note">
-        An online admission enquiry form will be enabled on this page shortly.
+        Our online admission form opens in a new tab. You can also call or email the school
+        office using the details above.
       </div>
     </SimplePage>
   );
