@@ -80,7 +80,7 @@ export default function Home() {
             {LEADERS.map((l) => (
               <div className="card leader" key={l.role}>
                 <div className="avatar">
-                  <img src="/images/avatar.svg" alt={`${l.name}, ${l.role}`} loading="lazy" />
+                  <img src={l.photo} alt={`${l.name}, ${l.role}`} loading="lazy" />
                 </div>
                 <blockquote>&ldquo;{l.quote}&rdquo;</blockquote>
                 <strong>{l.name}</strong>
