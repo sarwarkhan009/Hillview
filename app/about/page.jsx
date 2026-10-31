@@ -20,7 +20,7 @@ export default function AboutPage() {
           <tr><th>Board</th><td>{SCHOOL.affiliation} (Affiliation No: {SCHOOL.affiliationNo})</td></tr>
           <tr><th>U-Dise No</th><td>{SCHOOL.udiseNo}</td></tr>
           <tr><th>Type</th><td>{SCHOOL.medium}</td></tr>
-          <tr><th>Classes</th><td>{SCHOOL.classes}</td></tr>
+          <tr><th>Classes</th><td>Nursery to X</td></tr>
           <tr><th>Address</th><td>{SCHOOL.address}</td></tr>
         </tbody>
       </table>
