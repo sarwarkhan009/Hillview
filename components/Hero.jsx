@@ -5,7 +5,7 @@ import { SCHOOL } from "../lib/content";
 const SLIDES = [
   {
     img: "/images/hero-campus.svg",
-    alt: "HillView Public School campus",
+    alt: "HillView Public School Simdega campus",
     title: (
       <>
         Welcome to
@@ -21,7 +21,7 @@ const SLIDES = [
     alt: "Admissions open",
     title: "Admissions Open",
     text: "Give your child a holistic education in a safe, green campus on Kurdeg Road, Simdega.",
-    cta: { label: "Apply for Admission", href: "/admissions/apply" },
+    cta: { label: "Apply for Admission", href: SCHOOL.applyUrl, external: true },
   },
   {
     img: "/images/hero-learning.svg",
@@ -47,7 +47,7 @@ export default function Hero() {
           <div className="hero-caption">
             <h2>{s.title}</h2>
             <p>{s.text}</p>
-            <a className="btn btn-gold" href={s.cta.href}>{s.cta.label}</a>
+            <a className="btn btn-gold" href={s.cta.href} {...(s.cta.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>{s.cta.label}</a>
           </div>
         </div>
       ))}
