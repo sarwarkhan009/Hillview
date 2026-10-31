@@ -10,6 +10,9 @@ export default function LeaderPage() {
   const leader = LEADERS.find((l) => l.role === "Manager");
   return (
     <SimplePage title={leader.role + "'s Message"} crumb="About Us">
+      <div className="leader-photo">
+        <img src={leader.photo} alt={`${leader.name}, ${leader.role}`} />
+      </div>
       <p><strong>{leader.name}</strong> - {leader.role}</p>
       <p>{leader.message}</p>
     </SimplePage>
