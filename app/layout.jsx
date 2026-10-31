@@ -12,7 +12,7 @@ export const metadata = {
   description:
     "HillView Public School Simdega - an English medium, co-educational CBSE affiliated school (Affiliation No. 3430725). Managed by Ramawtar Ji Memorial Trust. Admissions open.",
   keywords: [
-    "HillView Public School",
+    "HillView Public School Simdega",
     "Simdega school",
     "CBSE school Simdega",
     "school in Simdega Jharkhand",
